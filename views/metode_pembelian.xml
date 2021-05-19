@@ -1,0 +1,51 @@
+<odoo>
+  <data>
+
+    <!-- metode.pembelian form view -->
+    <record id="metode_pembelian_view_form" model="ir.ui.view">
+      <field name="name">metode.pembelian.view.form</field>
+      <field name="model">metode.pembelian</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <!-- Add your fields here -->
+              <field name="name"/>
+              <field name="ket"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- metode.pembelian tree view -->
+    <record id="metode_pembelian_view_tree" model="ir.ui.view">
+      <field name="name">metode.pembelian.view.tree</field>
+      <field name="model">metode.pembelian</field>
+      <field name="arch" type="xml">
+        <tree>
+          <!-- Add your fields here -->
+          <field name="name"/>
+          <field name="ket"/>
+        </tree>
+      </field>
+    </record>
+ 
+    <!-- metode.pembelian action window -->
+    <record id="metode_pembelian_action" model="ir.actions.act_window">
+      <field name="name">Metode Pembelian</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">metode.pembelian</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+   
+  </data>
+</odoo>

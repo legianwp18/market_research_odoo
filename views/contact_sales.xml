@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+    <!-- res.partner inherit form view -->
+    <record id="contact_sales" model="ir.actions.act_window">
+      <field name="name">res.partner.inherit.view.form</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+      <field name="arch" type="xml">
+        <!-- Add your xpath here -->
+        <field name="domain">[('customer','=', True)]</field>
+      </field>
+    </record>
+  </data>
+</odoo>

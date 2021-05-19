@@ -1,0 +1,337 @@
+<odoo>
+  <data>
+    <!-- Data Catridge Lainya -->
+    <!-- customer.catridge.lain form view -->
+    <record id="customer_catridge_lain_view_form" model="ir.ui.view">
+      <field name="name">customer.catridge.lain.view.form</field>
+      <field name="model">customer.catridge.lain</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <!-- Add your fields here -->
+              <field name="id_brand"/>
+              <field name="name"/>
+              <field name="moncol"/>
+              <field name="note"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="customer_catridge_lain_list">
+      <field name="name">customer_catridge_lain list</field>
+      <field name="model">customer.catridge.lain</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_brand"/>
+          <field name="name"/>
+          <field name="moncol"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="customer_catridge_lain_action_window">
+      <field name="name">Catridge Lain</field>
+      <field name="res_model">customer.catridge.lain</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- Data Catridge Tinta -->
+    <!-- customer.catridge.tinta form view -->
+    <record id="customer_catridge_tinta_view_form" model="ir.ui.view">
+      <field name="name">customer.catridge.tinta.view.form</field>
+      <field name="model">customer.catridge.tinta</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <!-- Add your fields here -->
+              <field name="id_brand"/>
+              <field name="name"/>
+              <field name="moncol"/>
+              <field name="note"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="customer_catridge_tinta_list">
+      <field name="name">customer_catridge_tinta list</field>
+      <field name="model">customer.catridge.tinta</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_brand"/>
+          <field name="name"/>
+          <field name="moncol"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="customer_catridge_tinta_action_window">
+      <field name="name">Catridge Tinta</field>
+      <field name="res_model">customer.catridge.tinta</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- Data Catridge Laser -->
+    <!-- customer.catridge form view -->
+    <record id="customer_catridge_laser_view_form" model="ir.ui.view">
+      <field name="name">customer.catridge.view.form</field>
+      <field name="model">customer.catridge.laser</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <!-- Add your fields here -->
+              <field name="id_brand"/>
+              <field name="name"/>
+              <field name="moncol"/>
+              <field name="note"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="customer_catridge_laser_list">
+      <field name="name">customer_catridge list</field>
+      <field name="model">customer.catridge.laser</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_brand"/>
+          <field name="name"/>
+          <field name="moncol"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="customer_catridge_laser_action_window">
+      <field name="name">Catridge Laser</field>
+      <field name="res_model">customer.catridge.laser</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- Master Catridge Laser Customer -->
+    <!-- catridge.line pivot view -->
+    <record id="catridge_line_view_pivot" model="ir.ui.view">
+      <field name="name">catridge.line.view.pivot</field>
+      <field name="model">catridge.line</field>
+      <field name="arch" type="xml">
+        <pivot string="Pivot Description">
+          <!-- Add your fields here -->
+          <field type="row" name="name" />
+        </pivot>
+      </field>
+    </record>
+
+    <!-- catridge.line search view -->
+    <record id="catridge_line_view_search" model="ir.ui.view">
+      <field name="name">catridge.line.view.search</field>
+      <field name="model">catridge.line</field>
+      <field name="arch" type="xml">
+        <search string="Search Master Catridge Laser">
+          <!-- Add your fields here -->
+          <field name="name"/>
+          <field name="id_partner"/>
+          <field name="note"/>
+          <group expand="0" string="Group By">
+              <filter name="group_by_customer" string="Customer" context="{'group_by':'id_partner'}" help="Mengelompokan berdasarkan customer"/>
+              <filter name="group_by_catridge" string="Catridge Laser" context="{'group_by':'name'}" help="Mengelompokan berdasarkan catridge Laser"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- catridge.line tree view -->
+    <record id="catridge_line_view_tree" model="ir.ui.view">
+      <field name="name">catridge.line.view.tree</field>
+      <field name="model">catridge.line</field>
+      <field name="arch" type="xml">
+        <tree>
+          <!-- Add your fields here -->
+          <field name="id_partner"/>
+          <field name="name"/>
+          <field name="qty"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- catridge.line action window -->
+    <record id="action_master_catridge_laser" model="ir.actions.act_window">
+      <field name="name">Master Catridge Laser</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">catridge.line</field>
+      <field name="view_mode">tree,form,pivot,graph</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- Master Catridge Tinta Customer -->
+    <!-- catridge.tinta.line pivot view -->
+    <record id="catridge_tinta_line_view_pivot" model="ir.ui.view">
+      <field name="name">catridge.tinta.line.view.pivot</field>
+      <field name="model">catridge.tinta.line</field>
+      <field name="arch" type="xml">
+        <pivot string="Pivot Description">
+          <!-- Add your fields here -->
+          <field type="row" name="name" />
+        </pivot>
+      </field>
+    </record>
+
+    <!-- catridge.tinta.line search view -->
+    <record id="catridge_tinta_line_view_search" model="ir.ui.view">
+      <field name="name">catridge.tinta.line.view.search</field>
+      <field name="model">catridge.tinta.line</field>
+      <field name="arch" type="xml">
+        <search string="Search Master Catridge Tinta">
+          <!-- Add your fields here -->
+          <field name="name"/>
+          <field name="id_partner"/>
+          <field name="note"/>
+          <group expand="0" string="Group By">
+              <filter name="group_by_customer" string="Customer" context="{'group_by':'id_partner'}" help="Mengelompokan berdasarkan customer"/>
+              <filter name="group_by_catridge" string="Catridge Tinta" context="{'group_by':'name'}" help="Mengelompokan berdasarkan catridge Laser"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- catridge.tinta.line tree view -->
+    <record id="catridge_tinta_line_view_tree" model="ir.ui.view">
+      <field name="name">catridge.line.line.view.tree</field>
+      <field name="model">catridge.tinta.line</field>
+      <field name="arch" type="xml">
+        <tree>
+          <!-- Add your fields here -->
+          <field name="id_partner"/>
+          <field name="name"/>
+          <field name="qty"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- catridge.tinta.line action window -->
+    <record id="action_master_catridge_tinta" model="ir.actions.act_window">
+      <field name="name">Master Catridge Tinta</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">catridge.tinta.line</field>
+      <field name="view_mode">tree,form,pivot,graph</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- Master Catridge Lain Customer -->
+    <!-- catridge.tilainta.line pivot view -->
+    <record id="catridge_lain_line_view_pivot" model="ir.ui.view">
+      <field name="name">catridge.lain.line.view.pivot</field>
+      <field name="model">catridge.lain.line</field>
+      <field name="arch" type="xml">
+        <pivot string="Pivot Description">
+          <!-- Add your fields here -->
+          <field type="row" name="name" />
+        </pivot>
+      </field>
+    </record>
+
+    <!-- catridge.lain.line search view -->
+    <record id="catridge_lain_line_view_search" model="ir.ui.view">
+      <field name="name">catridge.lain.line.view.search</field>
+      <field name="model">catridge.lain.line</field>
+      <field name="arch" type="xml">
+        <search string="Search Master Catridge Lain">
+          <!-- Add your fields here -->
+          <field name="name"/>
+          <field name="id_partner"/>
+          <field name="note"/>
+          <group expand="0" string="Group By">
+              <filter name="group_by_customer" string="Customer" context="{'group_by':'id_partner'}" help="Mengelompokan berdasarkan customer"/>
+              <filter name="group_by_catridge" string="Catridge Tinta" context="{'group_by':'name'}" help="Mengelompokan berdasarkan catridge Laser"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- catridge.lain.line tree view -->
+    <record id="catridge_lain_line_view_tree" model="ir.ui.view">
+      <field name="name">catridge.lain.line.view.tree</field>
+      <field name="model">catridge.lain.line</field>
+      <field name="arch" type="xml">
+        <tree>
+          <!-- Add your fields here -->
+          <field name="id_partner"/>
+          <field name="name"/>
+          <field name="qty"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- catridge.lain.line action window -->
+    <record id="action_master_catridge_lain" model="ir.actions.act_window">
+      <field name="name">Master Catridge Lain</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">catridge.lain.line</field>
+      <field name="view_mode">tree,form,pivot,graph</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+  </data>
+</odoo>

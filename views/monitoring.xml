@@ -1,0 +1,231 @@
+<odoo>
+  <data>
+
+    <!-- monitoring form view -->
+    <record id="monitoring_view_form" model="ir.ui.view">
+        <field name="name">monitoring.view.form</field>
+        <field name="model">monitoring</field>
+        <field name="arch" type="xml">
+            <form string="Monitoring">
+                <header>
+                    <button string="Scan Data" name="hitung_data" type="object" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="date"/>    
+                        </group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="last_scan"/>
+                              
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Monitoring Data" name="monitoring_data" >
+                            <group>
+                                <field name="monitor_line" nolabel="1">
+                                    <tree string="Monitoring Data" create="true" delete="true" edit="true" editable="bottom">
+                                        <field name="id_category"/>
+                                        <field name="potensi_rill"/>
+                                        <field name="status"/>
+                                        <field name="jml_data"/>
+                                        <field name="jml_data_rill"/>
+                                        <field name="persen"/>
+                                        <field name="potensi_rerata"/>
+                                        <field name="potensi_all"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- monitoring tree view -->
+    <record id="monitoring_view_tree" model="ir.ui.view">
+        <field name="name">monitoring.view.tree</field>
+        <field name="model">monitoring</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="date"/>
+                <field name="user_id"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- monitoring action window -->
+    <record id="monitoring_action" model="ir.actions.act_window">
+        <field name="name">Monitoring Catridge Laser</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">monitoring</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+            </p><p>
+                <!-- More details about what a user can do with this object will be OK --> 
+            </p>
+        </field>
+    </record>
+
+    <!-- #################Catridge Tinta############### -->
+
+        <!-- monitoring form view -->
+    <record id="monitoring_tinta_view_form" model="ir.ui.view">
+        <field name="name">monitoring.view.form</field>
+        <field name="model">monitoring.tinta</field>
+        <field name="arch" type="xml">
+            <form string="Monitoring Catridge Tinta">
+                <header>
+                    <button string="Scan Data" name="hitung_data" type="object" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="date"/>    
+                        </group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="last_scan"/>
+                              
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Monitoring Catridge Tinta Data" name="monitoring_tinta_data" >
+                            <group>
+                                <field name="monitor_tinta_line" nolabel="1">
+                                    <tree string="Monitoring Data" create="true" delete="true" edit="true" editable="bottom">
+                                        <field name="id_category"/>
+                                        <field name="potensi_rill"/>
+                                        <field name="status"/>
+                                        <field name="jml_data"/>
+                                        <field name="jml_data_rill"/>
+                                        <field name="persen"/>
+                                        <field name="potensi_rerata"/>
+                                        <field name="potensi_all"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- monitoring tinta tree view -->
+    <record id="monitoring_tinta_view_tree" model="ir.ui.view">
+        <field name="name">monitoring.view.tree</field>
+        <field name="model">monitoring.tinta</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="date"/>
+                <field name="user_id"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- monitoring tinta action window -->
+    <record id="monitoring_tinta_action" model="ir.actions.act_window">
+        <field name="name">Monitoring Catridge Tinta</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">monitoring.tinta</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+            </p><p>
+                <!-- More details about what a user can do with this object will be OK --> 
+            </p>
+        </field>
+    </record>
+
+        <!-- #################Catridge Tinta############### -->
+
+        <!-- monitoring form view -->
+    <record id="monitoring_lain_view_form" model="ir.ui.view">
+        <field name="name">monitoring.view.form</field>
+        <field name="model">monitoring.lain</field>
+        <field name="arch" type="xml">
+            <form string="Monitoring Catridge Lain">
+                <header>
+                    <button string="Scan Data" name="hitung_data" type="object" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="date"/>    
+                        </group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="last_scan"/>
+                              
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Monitoring Catridge Lain Data" name="monitoring_lain_data" >
+                            <group>
+                                <field name="monitor_lain_line" nolabel="1">
+                                    <tree string="Monitoring Data" create="true" delete="true" edit="true" editable="bottom">
+                                        <field name="id_category"/>
+                                        <field name="potensi_rill"/>
+                                        <field name="status"/>
+                                        <field name="jml_data"/>
+                                        <field name="jml_data_rill"/>
+                                        <field name="persen"/>
+                                        <field name="potensi_rerata"/>
+                                        <field name="potensi_all"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- monitoring lain tree view -->
+    <record id="monitoring_lain_view_tree" model="ir.ui.view">
+        <field name="name">monitoring.view.tree</field>
+        <field name="model">monitoring.lain</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="date"/>
+                <field name="user_id"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- monitoring lain action window -->
+    <record id="monitoring_lain_action" model="ir.actions.act_window">
+        <field name="name">Monitoring Catridge Lain</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">monitoring.lain</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+            </p><p>
+                <!-- More details about what a user can do with this object will be OK --> 
+            </p>
+        </field>
+    </record>
+
+  </data>
+</odoo>

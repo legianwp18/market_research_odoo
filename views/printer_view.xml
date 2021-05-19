@@ -1,0 +1,336 @@
+<odoo>
+  <data>
+    <!-- Data Printer Lainya -->
+    <!-- customer.printer form view -->
+    <record id="customer_printer_lain_view_form" model="ir.ui.view">
+      <field name="name">customer.printer.lain.view.form</field>
+      <field name="model">customer.printer.lain</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <!-- Add your fields here -->
+              <field name="id_brand"/>
+              <field name="name"/>
+              <field name="model"/>
+              <field name="note"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="customer_printer_lain_list">
+      <field name="name">customer_printer_lain list</field>
+      <field name="model">customer.printer.lain</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_brand"/>
+          <field name="name"/>
+          <field name="model"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="customer_printer_lain_action_window">
+      <field name="name">Printer Lainya</field>
+      <field name="res_model">customer.printer.lain</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- Data Printer Tinta -->
+    <!-- customer.printer form view -->
+    <record id="customer_printer_tinta_view_form" model="ir.ui.view">
+      <field name="name">customer.printer.tinta.view.form</field>
+      <field name="model">customer.printer.tinta</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <!-- Add your fields here -->
+              <field name="id_brand"/>
+              <field name="name"/>
+              <field name="model"/>
+              <field name="note"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="customer_printer_tinta_list">
+      <field name="name">customer_printer_tinta list</field>
+      <field name="model">customer.printer.tinta</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_brand"/>
+          <field name="name"/>
+          <field name="model"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="customer_printer_tinta_action_window">
+      <field name="name">Printer Tinta</field>
+      <field name="res_model">customer.printer.tinta</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- Data Printer Laser -->
+    <!-- customer.printer form view -->
+    <record id="customer_printer_laser_view_form" model="ir.ui.view">
+      <field name="name">customer.printer.view.form</field>
+      <field name="model">customer.printer.laser</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <!-- Add your fields here -->
+              <field name="id_brand"/>
+              <field name="name"/>
+              <field name="model"/>
+              <field name="note"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="customer_printer_laser_list">
+      <field name="name">customer_printer list</field>
+      <field name="model">customer.printer.laser</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_brand"/>
+          <field name="name"/>
+          <field name="model"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="customer_printer_laser_action_window">
+      <field name="name">Printer</field>
+      <field name="res_model">customer.printer.laser</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- Master Printer Lain Customer -->
+    <!-- printer.line pivot view -->
+    <record id="printer_lain_line_view_pivot" model="ir.ui.view">
+      <field name="name">printer.line.view.pivot</field>
+      <field name="model">printer.lain.line</field>
+      <field name="arch" type="xml">
+        <pivot string="Pivot Description">
+          <!-- Add your fields here -->
+          <field type="row" name="name" />
+        </pivot>
+      </field>
+    </record>
+
+    <!-- printer.line search view -->
+    <record id="printer_lain_line_view_search" model="ir.ui.view">
+      <field name="name">printer.line.view.search</field>
+      <field name="model">printer.lain.line</field>
+      <field name="arch" type="xml">
+        <search string="Search Master Printer Lain">
+          <!-- Add your fields here -->
+          <field name="name"/>
+          <field name="id_partner"/>
+          <field name="note"/>
+          <group expand="0" string="Group By">
+              <filter name="group_by_customer" string="Customer" context="{'group_by':'id_partner'}" help="Mengelompokan berdasarkan customer"/>
+              <filter name="group_by_printer" string="Printer Lainya" context="{'group_by':'name'}" help="Mengelompokan berdasarkan Printer Laser"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- printer.line tree view -->
+    <record id="printer_lain_line_view_tree" model="ir.ui.view">
+      <field name="name">printer.line.view.tree</field>
+      <field name="model">printer.lain.line</field>
+      <field name="arch" type="xml">
+        <tree>
+          <!-- Add your fields here -->
+          <field name="id_partner"/>
+          <field name="name"/>
+          <field name="qty"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- printer.line action window -->
+    <record id="action_master_printer_lain" model="ir.actions.act_window">
+      <field name="name">Master Printer Lain</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">printer.lain.line</field>
+      <field name="view_mode">tree,form,pivot,graph</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- Master Printer Tinta Customer -->
+    <!-- printer.line pivot view -->
+    <record id="printer_tinta_line_view_pivot" model="ir.ui.view">
+      <field name="name">printer.line.view.pivot</field>
+      <field name="model">printer.tinta.line</field>
+      <field name="arch" type="xml">
+        <pivot string="Pivot Description">
+          <!-- Add your fields here -->
+          <field type="row" name="name" />
+        </pivot>
+      </field>
+    </record>
+
+    <!-- printer.line search view -->
+    <record id="printer_tinta_line_view_search" model="ir.ui.view">
+      <field name="name">printer.line.view.search</field>
+      <field name="model">printer.tinta.line</field>
+      <field name="arch" type="xml">
+        <search string="Search Master Printer Tinta">
+          <!-- Add your fields here -->
+          <field name="name"/>
+          <field name="id_partner"/>
+          <field name="note"/>
+          <group expand="0" string="Group By">
+              <filter name="group_by_customer" string="Customer" context="{'group_by':'id_partner'}" help="Mengelompokan berdasarkan customer"/>
+              <filter name="group_by_printer" string="Printer Tinta" context="{'group_by':'name'}" help="Mengelompokan berdasarkan Printer Laser"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- printer.line tree view -->
+    <record id="printer_tinta_line_view_tree" model="ir.ui.view">
+      <field name="name">printer.line.view.tree</field>
+      <field name="model">printer.tinta.line</field>
+      <field name="arch" type="xml">
+        <tree>
+          <!-- Add your fields here -->
+          <field name="id_partner"/>
+          <field name="name"/>
+          <field name="qty"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- printer.line action window -->
+    <record id="action_master_printer_tinta" model="ir.actions.act_window">
+      <field name="name">Master Printer Tinta</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">printer.tinta.line</field>
+      <field name="view_mode">tree,form,pivot,graph</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- Master Printer Laser Customer -->
+    <!-- printer.line pivot view -->
+    <record id="printer_line_view_pivot" model="ir.ui.view">
+      <field name="name">printer.line.view.pivot</field>
+      <field name="model">printer.line</field>
+      <field name="arch" type="xml">
+        <pivot string="Pivot Description">
+          <!-- Add your fields here -->
+          <field type="row" name="name" />
+        </pivot>
+      </field>
+    </record>
+
+    <!-- printer.line search view -->
+    <record id="printer_line_view_search" model="ir.ui.view">
+      <field name="name">printer.line.view.search</field>
+      <field name="model">printer.line</field>
+      <field name="arch" type="xml">
+        <search string="Search Master Printer Laser">
+          <!-- Add your fields here -->
+          <field name="name"/>
+          <field name="id_partner"/>
+          <field name="note"/>
+          <group expand="0" string="Group By">
+              <filter name="group_by_customer" string="Customer" context="{'group_by':'id_partner'}" help="Mengelompokan berdasarkan customer"/>
+              <filter name="group_by_printer" string="Printer Laser" context="{'group_by':'name'}" help="Mengelompokan berdasarkan Printer Laser"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- printer.line tree view -->
+    <record id="printer_line_view_tree" model="ir.ui.view">
+      <field name="name">printer.line.view.tree</field>
+      <field name="model">printer.line</field>
+      <field name="arch" type="xml">
+        <tree>
+          <!-- Add your fields here -->
+          <field name="id_partner"/>
+          <field name="name"/>
+          <field name="qty"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- printer.line action window -->
+    <record id="action_master_printer_laser" model="ir.actions.act_window">
+      <field name="name">Master Printer Laser</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">printer.line</field>
+      <field name="view_mode">tree,form,pivot,graph</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+  </data>
+</odoo>

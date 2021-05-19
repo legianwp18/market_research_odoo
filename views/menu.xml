@@ -1,0 +1,68 @@
+<odoo>
+  <data>
+    <!-- Top menu item -->
+
+    <menuitem name="Market Research" id="market_menu_root" sequence="25" groups="market_staff"/>
+   
+    <!-- menu categories -->
+    
+    <menuitem name="Customer" id="master_data_menu" parent="market_menu_root" action="res_partner_action" sequence="1" groups="market_staff"/>
+    <menuitem name="Monitoring" id="monitor_menu_categ" parent="market_menu_root" sequence="2" groups="market_manager"/>
+    <menuitem name="Master Data" id="master_menu_categ" parent="market_menu_root" sequence="3" groups="market_manager"/>
+    <menuitem name="Printer/Catridge" id="printer_catridge_menu" parent="market_menu_root" sequence="4" groups="market_manager"/>
+    <menuitem name="Category Customer" id="category_customer_menu" parent="market_menu_root" sequence="5" groups="market_manager"/>
+   
+    <!-- actions -->
+
+    <menuitem name="Brand" id="customer_brand_menu_list" parent="printer_catridge_menu" 
+              action="customer_brand_action_window" sequence="1"/>
+    <menuitem name="Printer Laser" id="customer_printer_laser_menu_list" parent="printer_catridge_menu" 
+              action="customer_printer_laser_action_window" sequence="2"/>
+    <menuitem name="Printer Tinta" id="customer_printer_tinta_menu_list" parent="printer_catridge_menu" 
+              action="customer_printer_tinta_action_window" sequence="3"/>
+    <menuitem name="Printer Lainya" id="customer_printer_lain_menu_list" parent="printer_catridge_menu" 
+              action="customer_printer_lain_action_window" sequence="4"/>
+    <menuitem name="Catridge Laser" id="customer_catridge_menu_list" parent="printer_catridge_menu"
+              action="customer_catridge_laser_action_window" sequence="5"/>
+    <menuitem name="Catridge Tinta" id="customer_catridge_tinta_menu_list" parent="printer_catridge_menu"
+              action="customer_catridge_tinta_action_window" sequence="6"/>
+    <menuitem name="Catridge Lainya" id="customer_catridge_lain_menu_list" parent="printer_catridge_menu"
+              action="customer_catridge_lain_action_window" sequence="7"/>
+    <menuitem name="Instansi/Perseroan" id="category_customer_submenu" parent="category_customer_menu"
+              action="category_customer_action_window"/>
+    <menuitem name="Metode Pembelian" id="metode_pembelian_submenu" parent="category_customer_menu"
+              action="metode_pembelian_action"/>
+    <menuitem id="printer_menu_act" name="Master Printer Laser" parent="master_menu_categ" 
+              action="action_master_printer_laser" sequence="1"/>
+    <menuitem id="printer_tinta_menu_act" name="Master Printer Tinta" parent="master_menu_categ" 
+              action="action_master_printer_tinta" sequence="2"/>
+    <menuitem id="printer_lain_menu_act" name="Master Printer Lainya" parent="master_menu_categ" 
+              action="action_master_printer_lain" sequence="3"/>
+    <menuitem id="catridge_menu_act" name="Master Catridge Laser" parent="master_menu_categ" 
+              action="action_master_catridge_laser" sequence="4"/>
+    <menuitem id="catridge_tinta_menu_act" name="Master Catridge Tinta" parent="master_menu_categ" 
+              action="action_master_catridge_tinta" sequence="5"/>
+    <menuitem id="catridge_lain_menu_act" name="Master Catridge Lain" parent="master_menu_categ" 
+              action="action_master_catridge_lain" sequence="6"/>
+    <menuitem id="monitoring_menu_act" name="Monitoring Catridge Laser" parent="monitor_menu_categ" 
+              action="monitoring_action" sequence="1"/>
+    <menuitem id="monitoring_tinta_menu_act" name="Monitoring Catridge Tinta" parent="monitor_menu_categ" 
+              action="monitoring_tinta_action" sequence="2"/>
+    <menuitem id="monitoring_lain_menu_act" name="Monitoring Catridge Lain" parent="monitor_menu_categ" 
+              action="monitoring_lain_action" sequence="3"/>
+    <menuitem id="academy_menu_act" name="Performance Academy" parent="monitor_menu_categ" 
+              action="academy_action" sequence="4"/>
+
+    <!-- menu categories CRM -->    
+    <menuitem name="MasterPrinter" id="customer_printer_menu_1" parent="sales_team.menu_sale_config" sequence="97"/>
+
+    <!-- actions CRM -->
+    <menuitem name="Printer" id="customer_printer_menu_1_list" parent="customer_printer_menu_1"
+              action="customer_printer_laser_action_window" sequence="2"/>
+    <menuitem name="Brand" id="customer_brand_menu_1_list" parent="customer_printer_menu_1"
+              action="customer_brand_action_window" sequence="1"/>
+    <menuitem name="Catridge" id="customer_catridge_menu_1_list" parent="customer_printer_menu_1"
+              action="customer_catridge_laser_action_window" sequence="3"/>
+
+  </data>
+</odoo>
